@@ -1,4 +1,4 @@
-require './kv'
+require './vault/kv'
 
 token = ''
 secrets = Vault::KV.new(host: 'https://vlt-staging.s7s.ai', mount: 'platform-kv', token: token)
