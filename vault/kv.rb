@@ -1,22 +1,20 @@
 require 'rest-client'
 require 'json'
+require_relative 'base'
 
 module Vault
-  class KV
+  class KV < Base
     def initialize(host:, token:, mount:)
-      @host = host
-      @token = token
+      super(token: token, host: host)
       @mount = mount
     end
 
     def get(key)
-      headers = { 'X-Vault-Token' => @token }
       response = RestClient.get(url(key), headers)
       JSON.parse(response.body).dig('data','data')
     end
 
     def set(key, value)
-      headers = { 'X-Vault-Token' => @token, 'Content-Type' => 'application/json' }
       RestClient.post(url(key), { data: value }.to_json, headers)
     end
 

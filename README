@@ -5,3 +5,7 @@ DEMO:
 bundle install
 bundle exec ruby vault_secrets_test.rb
 ```
+
+Transit Docs:
+https://www.vaultproject.io/docs/secrets/transit
+https://www.vaultproject.io/api/secret/transit
