@@ -1,0 +1,7 @@
+DEMO:
+- add VAULT_TOKEN to env variables
+- run in console
+```
+bundle install
+bundle exec ruby vault_secrets_test.rb
+```
